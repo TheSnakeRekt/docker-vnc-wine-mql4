@@ -3,13 +3,13 @@
 Forward VNC service port 5900 to host by
 
 ```shell
-    docker run -p 5900:5900 -v /dev/shm:/dev/shm {imagetag}
+    docker run -p 5900:5900 -v /path/shared/folder:/path/shared/folder {imagetag}
 ```
 
 Now, open the vnc viewer and connect to port 5900. If you would like to protect vnc service by password, set environment variable `VNC_PASSWORD`, for example
 
 ```shell
-    docker run -p 6080:80 -p 5900:5900 -e VNC_PASSWORD=password -v /dev/shm:/dev/shm {imagetag}
+    docker run -p 6080:80 -p 5900:5900 -e VNC_PASSWORD=password -v /path/shared/folder:/path/shared/folder {imagetag}
 ```
 
 A prompt will ask password either in the browser or vnc viewer.
